@@ -8,56 +8,74 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      book:[
-        {id: 1, title: "The Lost sun", content: "This 1note", tag: "prima"},
-        {id: 2, title: "The Cage anim", content: "This 2note", tag: "seco"},
-        {id: 3, title: "The Batchlor", content: "This 3note", tag: "terso"},
-        {id: 4, title: "The Identity", content: "This 4note", tag: "petra"},
-        {id: 5, title: "The Mind Bogler", content: "This 5note", tag: "chinka"},
-        {id: 6, title: "The MisFit", content: "This 6note", tag: "sito"}
-      ]
+      book:[]
+
     }
-    this.addNote = this.addNote.bind(this)
-    this.removeNote = this.removeNote.bind(this)
     this.allNotes = this.allNotes.bind(this)
-    this.updateNote = this.updateNote.bind(this)
+    this.add = this.add.bind(this)
+    this.nextId = this.nextId.bind(this)
+    this.listAll = this.listAll.bind(this)
+   
   } 
 
-  addNote() {}
-  updateNote() {}
-  removeNote() {}
+  componentWillMount() {
+    var self = this
+    if(this.props.count) {
+      fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
+        .then(response => response.json())
+        .then(json => json[0].split('. ')
+        .forEach(sentence => self.add(sentence.substring(0, 50))))
+    }
+  }
 
-  allNotes(title, i){
+  add(text) {
+    this.setState(prevState => ({
+      book: [ ...prevState.book, {id: this.nextId(), content: text } ]
+      })
+    )
+  }
+
+  nextId(){
+    this.uniqueId = this.uniqueId || 0
+    return this.uniqueId++
+  }
+
+  allNotes(note, i){
     return(
-    <div id="read">
-      <NoteList
-        key = {title.id}
-        index = {title.id}
+      <Note
+        key = {note.id}
+        index = {note.i}
         onChange={this.update}
         onRemove={this.removeNote}>
-        <li><a href="#">{title.title}</a>, {title.tag}</li>
-      </NoteList>
-    
-    
-      <Note index = {title.id} onChange={this.update}>
-      <p>{title.content}</p>
+          {note.content} 
+        
       </Note>
-    </div>
+    )
+  }
+
+  listAll(note, i){
+    return(
+      <NoteList key = {note.id} index = {note.i} onChange={this.update} onRemove={this.removeNote}>
+        <span>{i + 1} :<a href="#"> {note.content.substring(0, 20)}</a></span>
+      </NoteList> 
     )
   }
 
   
   render() {
     return(
-      <div className="app">
-        {this.state.book.map(this.allNotes)}      
-        <span>
-          <button id="add" onClick={this.addNote}>+</button>
-        </span>
-      </div>     
+      <NoteList >
+        <div className="notelist-2">
+          <span><h1>Title</h1></span>
+          {this.state.book.map(this.listAll)}
+        </div>
+        <div className="note">
+           <span> <h1>Note</h1></span>
+        <p>{this.state.book.map(this.allNotes)}</p>
+        </div>       
+      </NoteList> 
     )
   }
 }
-
 
 export default App

@@ -1,3 +1,31 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ .main{
+  width:auto;
+  height:auto;
+ }
+
+.notelist-1 {  
+  display: grid;
+  grid-template-columns: 21vw 75vw;
+  grid-template-rows: auto;
+  grid-gap: 5px 10px;
+  height: auto;
+  background: url("old_notepaper.jpg");
+  background-size: cover;
+  border-radius: 1rem 2%;
+  padding: 10px 10px;
+  list-style: none;
+    a {
+    text-decoration:none;
+  }
+}
+.note{
+  padding: 2px 50px 0px 4px;
+}
+.notelist-1 span {
+   box-shadow:4px 10px 20px 4px grey;
+   border-radius: 1rem 2%;
+}

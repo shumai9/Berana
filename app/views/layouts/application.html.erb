@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>RailsReactProject</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Felipa|Italianno" rel="stylesheet">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +14,18 @@
     
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <div id="header">
+        <%= render( :partial =>'layouts/navbar')%>   
+        </div>      
+    </header>
+    <div class="main">
+      <%= yield %>
+      </div>
+    <footer>
+      <div id="footer">
+        <%= render(:partial => 'layouts/footer')%>
+      </div>
+    </footer>
   </body>
 </html>

@@ -9,13 +9,12 @@ class NoteList extends React.Component {
 
   render(){
     return(
-      <div className="notelist">
+      <div className="notelist-1">
         {this.props.children}
       </div>
-      
-    )
+    );
   }
+}     
 
-}
 
-export default NoteList; 
+export default NoteList;  

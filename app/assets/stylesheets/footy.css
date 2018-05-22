@@ -1,0 +1,9 @@
+footer{
+  background: no-repeat url("texture_leaf.jpg");
+  background-size: cover;
+  background-color: rgba(215, 123, 56, 0.45);
+}
+#feet{
+width: 100vw;
+height: 10vh;
+}

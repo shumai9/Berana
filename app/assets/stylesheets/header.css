@@ -1,0 +1,27 @@
+header{
+  background: no-repeat url("texture_leaf.jpg");
+  background-size: cover;
+  width:100vw;
+  height:15vh;
+}
+#header,
+a.nav-link,
+li.nav-item{
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  text-align: center; 
+}
+a.navbar-brand {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+}
+nav{
+   background-color: rgba(133, 184, 196, 0.41);
+   width:100vw;
+   margin: 5px 10px;
+  padding: 5px 5px;
+  border-radius: 1rem;
+}

@@ -17,6 +17,7 @@ class Note extends React.Component {
       })
     }
 
+
     save(e) {
       e.preventDefault()
       this.props.onChange(text, this.props.index)
@@ -28,6 +29,19 @@ class Note extends React.Component {
     remove() {
       this.props.onRemove(this.props.index)
     }
+    
+    allNotes(note, i){
+    return(
+      <Note className="note"
+        key = {note.id}
+        index = {note.i}
+        onChange={this.update}
+        onRemove={this.removeNote}>
+        {note.content} 
+        
+      </Note>
+    )
+  }
 
   renderForm() {
     return(
@@ -43,12 +57,8 @@ class Note extends React.Component {
   }
   
 
-  renderShow() {
-    return(
-       <div className="note">
-        {this.props.children}          
-      </div>
-    );
+  renderShow() { 
+    return this.props.children
   }
   render(){
   return( this.state.editing ? this.renderForm() : this.renderShow())
