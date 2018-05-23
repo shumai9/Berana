@@ -9,7 +9,7 @@ class NoteList extends React.Component {
 
   render(){
     return(
-      <div className="notelist-1">
+      <div id="NL">
         {this.props.children}
       </div>
     );

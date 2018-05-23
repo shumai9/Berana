@@ -1,27 +1,41 @@
 header{
-  background: no-repeat url("texture_leaf.jpg");
-  background-size: cover;
-  width:100vw;
-  height:15vh;
+ /* background: no-repeat url("Brana.jpg");
+  background-size: cover;*/
+  font-family: 'Felipa', cursive; 
 }
-#header,
-a.nav-link,
-li.nav-item{
+
+.container {
+  padding: 15px;
+  font-family: 'Felipa', cursive; 
+}
+div.collapse {
+  text-align: center;
+   background-color: rgba(133, 184, 196, 0.41);
+   border-radius: 1rem;   
+}
+.navbar-brand {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: left;
+  padding: 15px;
+  text-align: left;
+}
+
+.nav-item, li a {
   display: inline-block;
   list-style: none;
   text-decoration: none;
-  text-align: center; 
+  list-style: none;
+  padding: 10px; 
 }
-a.navbar-brand {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 30px;
-  text-align: left;
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-nav{
-   background-color: rgba(133, 184, 196, 0.41);
-   width:100vw;
-   margin: 5px 10px;
-  padding: 5px 5px;
-  border-radius: 1rem;
-}
+
+.sticky + .main {
+  padding-top: 6px;
+}*/

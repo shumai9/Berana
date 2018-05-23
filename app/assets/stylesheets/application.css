@@ -15,13 +15,24 @@
  */
 
 html{
+  background: repeat url("Brana.jpg");
+  background-size: cover;
   height: 100vh;
   width: 100vw;
+  font-family: 'Italianno', cursive;
+  font-size: 30px;
+  font-size: 1.5rem;
+}
+#logo{
+  font-family: 'Italianno', cursive;
+}
+.main{
+  padding: 15px;
 }
 
-body,.main{
-  font-size: 1.5rem;
-font-family: 'Italianno', cursive;
-font-family: 'Felipa', cursive;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 

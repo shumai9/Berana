@@ -37,11 +37,11 @@ class Note extends React.Component {
         index = {note.i}
         onChange={this.update}
         onRemove={this.removeNote}>
-        {note.content} 
-        
+        <span><h1 id="title">Note</h1></span>
+        {note.content}        
       </Note>
     )
-  }
+  } 
 
   renderForm() {
     return(
@@ -61,8 +61,10 @@ class Note extends React.Component {
     return this.props.children
   }
   render(){
-  return( this.state.editing ? this.renderForm() : this.renderShow())
+    return( this.state.editing ? this.renderForm() : this.renderShow())
   }
 }
 
+
 export default Note;
+

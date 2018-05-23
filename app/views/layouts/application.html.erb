@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsReactProject</title>
+    <title id="logo">BeRana</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Felipa|Italianno" rel="stylesheet">
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,13 +15,11 @@
   </head>
   <body>
     <header>
-      <div id="header">
-        <%= render( :partial =>'layouts/navbar')%>   
-        </div>      
+      <%= render( :partial =>'layouts/navbar')%>
     </header>
     <div class="main">
       <%= yield %>
-      </div>
+    </div>
     <footer>
       <div id="footer">
         <%= render(:partial => 'layouts/footer')%>

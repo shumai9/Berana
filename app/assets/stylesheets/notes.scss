@@ -3,19 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
  .main{
-  width:auto;
-  height:auto;
+  margin:0;
  }
 
 .notelist-1 {  
   display: grid;
-  grid-template-columns: 21vw 75vw;
+  grid-template-columns: 18vw 75vw;
   grid-template-rows: auto;
-  grid-gap: 5px 10px;
+  grid-gap: 15px 10px;
   height: auto;
   background: url("old_notepaper.jpg");
   background-size: cover;
-  border-radius: 1rem 2%;
+  border-radius: 1rem 3%;
   padding: 10px 10px;
   list-style: none;
     a {
@@ -25,7 +24,16 @@
 .note{
   padding: 2px 50px 0px 4px;
 }
-.notelist-1 span {
-   box-shadow:4px 10px 20px 4px grey;
-   border-radius: 1rem 2%;
+#NL {
+   box-shadow:0px 10px 20px 4px grey;
+   border-radius: 10rem 0.1%;
+   #num, a {
+   font-size: 25px;
+   margin: 15px;
+   }
 }
+#list{
+  padding:15px;
+
+}
+

@@ -1,9 +1,9 @@
 footer{
-  background: no-repeat url("texture_leaf.jpg");
-  background-size: cover;
-  background-color: rgba(215, 123, 56, 0.45);
+  /*background: no-repeat url("Brana.jpg");
+  background-size: cover;*/
+  background-color: rgba(120, 120, 120, 0.45);
 }
 #feet{
-width: 100vw;
-height: 10vh;
+  width: 100vw;
+  height: 50vh;
 }

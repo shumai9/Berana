@@ -55,8 +55,14 @@ class App extends React.Component {
 
   listAll(note, i){
     return(
-      <NoteList key = {note.id} index = {note.i} onChange={this.update} onRemove={this.removeNote}>
-        <span>{i + 1} :<a href="#"> {note.content.substring(0, 20)}</a></span>
+      <NoteList 
+        key = {note.id}
+        index = {note.i}
+        onChange={this.update}
+        onRemove={this.removeNote}>
+          <em id="num">{i + 1}
+            <a id="list" href="#">{note.content.substring(0, 20)}</a>
+          </em> 
       </NoteList> 
     )
   }
@@ -65,13 +71,9 @@ class App extends React.Component {
   render() {
     return(
       <NoteList >
-        <div className="notelist-2">
-          <span><h1>Title</h1></span>
-          {this.state.book.map(this.listAll)}
-        </div>
-        <div className="note">
-           <span> <h1>Note</h1></span>
-        <p>{this.state.book.map(this.allNotes)}</p>
+        <div className="notelist-1">
+          <span>{this.state.book.map(this.listAll)}</span>         
+          <p className="note">{this.state.book.map(this.allNotes)}</p>
         </div>       
       </NoteList> 
     )
