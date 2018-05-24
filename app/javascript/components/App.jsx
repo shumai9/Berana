@@ -1,16 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import NoteList from '../components/NoteList'
 import Note from '../components/Note'
+
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { 
-      book:[]
-
-    }
+    this.state = {book:[]}
     this.allNotes = this.allNotes.bind(this)
     this.add = this.add.bind(this)
     this.nextId = this.nextId.bind(this)
@@ -71,6 +68,12 @@ class App extends React.Component {
   render() {
     return(
       <NoteList >
+        <span id="note-title">
+          <h3>Title List</h3>
+          <h3>Note</h3> </span>
+        <button id="fab" onClick ={this.add.bind(null, "New note")}>
+        <span> + Add Note </span>
+        </button>
         <div className="notelist-1">
           <span>{this.state.book.map(this.listAll)}</span>         
           <p className="note">{this.state.book.map(this.allNotes)}</p>

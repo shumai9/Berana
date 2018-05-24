@@ -8,10 +8,10 @@
 
 .notelist-1 {  
   display: grid;
-  grid-template-columns: 18vw 75vw;
+  grid-template-columns: 300px auto;
   grid-template-rows: auto;
   grid-gap: 15px 10px;
-  height: auto;
+  height: 100vh;
   background: url("old_notepaper.jpg");
   background-size: cover;
   border-radius: 1rem 3%;
@@ -22,18 +22,39 @@
   }
 }
 .note{
-  padding: 2px 50px 0px 4px;
+  padding:15px;
+  margin: 5px;
 }
 #NL {
    box-shadow:0px 10px 20px 4px grey;
    border-radius: 10rem 0.1%;
    #num, a {
-   font-size: 25px;
    margin: 15px;
    }
 }
-#list{
-  padding:15px;
+#list, em#num{
+font-family: 'Felipa', cursive;
+padding:15px;
 
 }
 
+#add, #fab{
+  position: relative;
+  float: right;
+  font-family: 'Italianno', cursive;
+  padding: 5px;
+  border-radius: 1rem 10%;
+  background: #2efe94;
+  font-size: 0.8rem;
+}
+
+.notelist-1 span {
+  margin-top: 5px;
+  padding: 3px;
+}
+#note-title h3 {
+  display: inline-block;
+  position: relative;
+  padding: 0rem 11rem 0rem 2rem;
+  margin-bottom: 0;
+}
