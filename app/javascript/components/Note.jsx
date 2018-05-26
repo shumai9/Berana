@@ -9,8 +9,14 @@ class Note extends React.Component {
       }
       this.edit = this.edit.bind(this)
       this.save = this.save.bind(this)
+      this.handleChange = this.handleChange.bind(this)
     }
     
+  handleChange(event) {
+    this.setState({value: event.target.value});
+
+
+  }
     edit() {
       this.setState({
         editing: true
@@ -29,36 +35,29 @@ class Note extends React.Component {
     remove() {
       this.props.onRemove(this.props.index)
     }
-    
-    allNotes(note, i){
-    return(
-      <Note className="note"
-        key = {note.id}
-        index = {note.i}
-        onChange={this.update}
-        onRemove={this.removeNote}>
-        <span><h1 id="title">Note</h1></span>
-        {note.content}        
-      </Note>
-    )
-  } 
 
   renderForm() {
     return(
       <div className="note">
-        <label>
         <form onSubmit ={this.save}>
-          <textarea />
+          <label>
+            textnote:
+            <textarea value={this.state.value} onChange={this.handleChange}/>
+          </label>
           <button id="save">save</button>
         </form>
-        </label>
       </div>
     )
   }
   
 
   renderShow() { 
-    return this.props.children
+    return ( 
+      <div>
+        {this.props.children}
+        <button id="fab">Edit</button>
+     </div>
+    )
   }
   render(){
     return( this.state.editing ? this.renderForm() : this.renderShow())

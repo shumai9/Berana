@@ -4,14 +4,15 @@
 
  .main{
   margin:0;
+  height: 100vh;
  }
 
 .notelist-1 {  
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns:250px auto;
   grid-template-rows: auto;
   grid-gap: 15px 10px;
-  height: 100vh;
+  height: auto;
   background: url("old_notepaper.jpg");
   background-size: cover;
   border-radius: 1rem 3%;
@@ -21,29 +22,32 @@
     text-decoration:none;
   }
 }
-.note{
+p.note{
   padding:15px;
   margin: 5px;
+  height: 600px;
+  background-color: #c4d9b1;
+  margin: 10px 10px;
+  cursor: -webkit-grab;
+  -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
 }
-#NL {
+
+ a#list{
    box-shadow:0px 10px 20px 4px grey;
    border-radius: 10rem 0.1%;
-   #num, a {
-   margin: 15px;
-   }
 }
-#list, em#num{
-font-family: 'Felipa', cursive;
-padding:15px;
 
+#NLem,#list, em#num{
+font-family: 'Felipa', cursive;
 }
 
 #add, #fab{
-  position: relative;
+  
   float: right;
   font-family: 'Italianno', cursive;
   padding: 5px;
-  border-radius: 1rem 10%;
+  border-radius: 1rem 1%;
   background: #2efe94;
   font-size: 0.8rem;
 }

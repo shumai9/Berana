@@ -1,9 +1,10 @@
 footer{
+  text-align: center;
   /*background: no-repeat url("Brana.jpg");
   background-size: cover;*/
   background-color: rgba(120, 120, 120, 0.45);
 }
 #feet{
   width: 100vw;
-  height: 50vh;
+  height: 25vh;
 }

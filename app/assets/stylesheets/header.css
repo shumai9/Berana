@@ -38,4 +38,9 @@ div.collapse {
 
 .sticky + .main {
   padding-top: 6px;
-}*/
+}
+.navbar-brand img {
+  background: #f4d191;
+  border: 1px solid;
+  border-radius: 54% 0.01rem;
+}
