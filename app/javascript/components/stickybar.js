@@ -1,5 +1,5 @@
 //help animate navbar
-document.addEventListener('DOMContentLoaded', window.onscroll = function() {myFunction()};
+document.addEventListener('DOMContentLoaded', window.onscroll = function() {myFunction()});
 
 var navbar = document.querySelector(".navbar");
 var sticky = navbar.offsetTop;
@@ -11,4 +11,4 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-);
+

@@ -7,11 +7,9 @@ import Note from '../components/Note'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { book:[]}
-    this.add = this.add.bind(this)
-    this.nextId = this.nextId.bind(this)
-    this.listAll = this.listAll.bind(this)
-    this.openNote = this.openNote.bind(this)
+    this.state = {
+      book:[]
+    }
   } 
 
   componentWillMount() {
@@ -24,37 +22,35 @@ class App extends React.Component {
     }
   }
 
-  add(text) {
+  add = (text) => {
     this.setState(prevState => ({
       book: [ ...prevState.book, {id: this.nextId(), content: text } ]
       })
     )
   }
 
-  nextId(){
+  nextId = () =>{
     this.uniqueId = this.uniqueId || 0
     return this.uniqueId++
   }
   
   
-  openNote(e, i) { 
+  openNote = (e, i) => { 
     e.preventDefault();
-    return(
-     <Note key = {note.id} index = {note.id}>
-        <p className="note">  {this.state.book[i].content} </p>  
-      </Note>
-    )   
+    var res = this.state.book[i].content;
+    return (<Note value = {res} />) 
   }
 
-  listAll(note, i){
+  listAll = (props, i) =>{
     return(
-      <NoteList key = {note.id} index = {note.id} >
+      <div key = {props.id} index = {props.id} >
         <em id="num">{i + 1} <a href='#' id="list"  onClick={(e) => this.openNote(e, i)}>
-         {note.content.substring(0, 20)}</a>
+         {props.content.substring(0, 20)}</a>
         </em> 
-      </NoteList> 
+      </div> 
     )
   }
+
   render() {
     return(
       <NoteList >

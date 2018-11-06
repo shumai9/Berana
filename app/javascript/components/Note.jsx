@@ -51,16 +51,16 @@ class Note extends React.Component {
   }
   
 
-  renderShow() { 
+  renderNote() { 
     return ( 
-      <div>
-        {this.props.children}
+       <div className="yo">
         <button id="fab">Edit</button>
-     </div>
+        <p className="not">{this.props.value}</p>
+      </div>    
     )
   }
   render(){
-    return( this.state.editing ? this.renderForm() : this.renderShow())
+    return( this.state.editing ? this.renderForm() : this.renderNote())
   }
 }
 
